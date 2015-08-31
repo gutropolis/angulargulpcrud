@@ -81,19 +81,31 @@ gulp.task('complile_css', function () {
 		.pipe(gulp.dest('./public/js')); // write all.min.js to the dist/js file
 	});
 	 
+	gulp.task('compileAngularjs', function() {
+	  return gulp.src([
+	  	
+	       config.bowerDir + '/main/*.js' 
+	
+		
+	  ]).pipe(plumber())
+	   	.pipe(jshint()) // run their contents through jshint 
+		.pipe(rename('main.min.js')) // now rename the file in memory to 'all.min.js'
+		.pipe(uglify ({mangle: false}))  // run uglify (for minification) on 'all.min.js'
+		.pipe(gulp.dest('./public/js')); // write all.min.js to the dist/js file
+	}); 
 	
 	//for future, streamque is used for making sequence of steam
 	
-// Rerun the task when a file changes
- gulp.task('watch', function() {
-     gulp.watch(config.bowerDir + '/font-awesome/fonts/**.*', ['complile_font_awesome']); 
-	 gulp.watch(config.bowerDir + '/bootstrap-sass/assets/stylesheets/**/*.scss', ['complile_css']);
-	 // gulp.watch(config.bowerDir + '/bootstrap-sass/assets/stylesheets/**/*.scss', ['bootstrapAngularjs']); 
-	 
-	 
-});
+    // Rerun the task when a file changes
+	gulp.task('watch', function() {
+		 gulp.watch(config.bowerDir + '/font-awesome/fonts/**.*', ['complile_font_awesome']); 
+		 gulp.watch(config.bowerDir + '/bootstrap-sass/assets/stylesheets/**/*.scss', ['complile_css']);
+		 // gulp.watch(config.bowerDir + '/bootstrap-sass/assets/stylesheets/**/*.scss', ['bootstrapAngularjs']); 
+		 
+		 
+	});
 
 
 
 
- gulp.task('default', ['bower', 'complile_font_awesome', 'complile_css',  'bootstrapAngularjs','watch']);
+ gulp.task('default', ['bower', 'complile_font_awesome', 'complile_css',  'bootstrapAngularjs','compileAngularjs','watch']);

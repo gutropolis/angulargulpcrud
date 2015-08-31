@@ -17,7 +17,9 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 	$scope.update_bookId		= '';
 	$scope.bookDetail 			= [];
 	
-	// makeFieldValid will check the input gives in input box is valid or not //
+ /* 
+ * makeFieldValid will check the input gives in input box is valid or not  
+ */
 	
 	$scope.makeFieldValid = function(arg){
 		if(arg == 'book_name'){
@@ -47,7 +49,10 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 		}
 	};
 	
-	// Adding new book to the library database //
+ /*  
+ 
+  *Adding new book to the library database   
+  */
 	
 	$scope.add_book = function(){
 		if($scope.book_name.length == ''){
@@ -81,14 +86,14 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 		}
 	};
 	
-	// view all existing books in database //
+	/* // view all existing books in database   */
 	
 	$scope.list_of_books = function(){
 		
 		$scope.listbook	= true;
 		$scope.addbook	= false;
 		$scope.editBook	= false;
-		var viewUrl		= "../library/view-controller.php";
+		var viewUrl		= "../angulargulpcrud/view-controller.php";
 		var list = '';
 		
 		$http.get(viewUrl).success(function(data){
@@ -106,11 +111,11 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 		});
 	};
 	
-	// removing book from the library database //
+	/* // removing book from the library database  */
 	
 	$scope.remove_book = function(book){
 		var r = confirm("Are you sure want to delete this book?");
-		var dltUrl = '../library/delete-controller.php';
+		var dltUrl = '../angulargulpcrud/delete-controller.php';
 		if(r == true){
 			$http({
 				method:'post',
@@ -128,13 +133,13 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 		}
 	};
 	
-	// editing the book details of existing library database
+	/* // editing the book details of existing library database */
 	
 	$scope.edit_book = function(book){
 		$scope.editBook = true;
 		$scope.listbook = false;
 		$scope.bookDetail = {};
-		//console.log(book);
+		/* //console.log(book); */
 		$scope.bookDetail = {
 			'name' : book.book,
 			'author': book.author,
@@ -149,7 +154,7 @@ app.controller('libCntrl', function($scope, $timeout, $http){
 		$scope.update_bookId		= $scope.bookDetail.bookid;
 	};
 	
-	// update the book details to the library //
+	/* // update the book details to the library   */
 	
 	$scope.update_book = function(){
 		if($scope.edit_book_name.length == ''){

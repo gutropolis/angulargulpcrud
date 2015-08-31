@@ -70,7 +70,7 @@
         </div>
 	  </div>
 	</div>
-	<input type="hidden" id="add_cntrl" value="../library/add-controller.php"/>
+	<input type="hidden" id="add_cntrl" value="../angularcrud/add-controller.php"/>
 	
 	<!-- Button (Double) -->
 	<div class="control-group">
@@ -176,7 +176,7 @@
         </div>
 	  </div>
 	</div>
-	<input type="hidden" id="edit_cntrl" value="../library/update-controller.php"/>
+	<input type="hidden" id="edit_cntrl" value="../angulargulpcrud/update-controller.php"/>
 	
 	<!-- Button (Double) -->
 	<div class="control-group">
@@ -197,6 +197,7 @@
  <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="public/js/app.min.js"></script>
+    <script src="public/js/main.min.js"></script>
 	
  
 </body>
