@@ -1,0 +1,8 @@
+we have not installed folder "node_modules".
+
+please run the following command in node
+
+>npm install gulp
+>npm install    gulp-notify gulp-bower gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename gulp-browserify gulp-clean gulp-minify-css gulp-sourcemaps gulp-plumber gulp-util merge-stream
+
+it will install gulp component in folder "node_modules"
