@@ -1,0 +1,16 @@
+﻿.pagetable th{
+		background:#459BE4;
+		text-align:center;
+		border-color:#2D7DC0 !important;
+		color:#fff;
+		text-shadow:0 1px 1px rgba(0,0,0,0.45);
+	}
+	
+	.pagetable td:last-child, .pagetable td:nth-last-child(2){
+		text-align:center;
+	}
+	
+	.control-group input[type="radio"]{
+		position:relative;
+		    margin-left: 0;
+	}

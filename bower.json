@@ -1,0 +1,19 @@
+{
+  "name": "Angular gulp",
+  "version": "1.1.1",
+  "description": "testing purpose",
+  "main": "index.html",
+  "keywords": [
+    "testing"
+  ],
+  "authors": [
+    "Sandeep Saini"
+  ],
+  "license": "Spe",
+  "homepage": "htt",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}
