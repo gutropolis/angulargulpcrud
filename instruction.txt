@@ -5,4 +5,8 @@ please run the following command in node
 >npm install gulp
 >npm install    gulp-notify gulp-bower gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename gulp-browserify gulp-clean gulp-minify-css gulp-sourcemaps gulp-plumber gulp-util merge-stream
 
+New update:
+add
+>npm install gulp-cssimport
+
 it will install gulp component in folder "node_modules"

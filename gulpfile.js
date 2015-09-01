@@ -9,8 +9,9 @@ var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserify = require('gulp-browserify');
-var clean = require('gulp-clean');
+//var clean = require('gulp-clean');
 var minifyCSS = require('gulp-minify-css');
+var cssImport = require("gulp-cssimport");
 var sourcemaps = require('gulp-sourcemaps'); 
 var plumber= require("gulp-plumber");
 var gutil = require('gulp-util');
@@ -19,6 +20,20 @@ var config = {
     sassPath: './resources/sass',
     bowerDir: './assets' 
 }
+
+var minifyCssOptions = {
+        inliner: {
+            request: {
+                  hostname: "localhost",   // I'm running a cntlm proxy which relays to the corp proxy
+                  port: 3128,
+                  path: "http://fonts.googleapis.com/css?family=Raleway:400,700,300",
+                  headers: {
+                    Host: "fonts.googleapis.com"
+                  }
+            }
+        }
+};
+
 
 	gulp.task('bower', function() { 
 		return bower()
@@ -55,7 +70,8 @@ gulp.task('complile_css', function () {
     return merge(sassStream, cssStream)
 				.pipe(concat('style.min.css'))
 				.pipe(gulp.dest('./public/css')) 
-				.pipe(minifyCSS())
+				.pipe(cssImport())
+				.pipe(minifyCSS({skip_import: true}))
 				.pipe(rename('style.min.css'))
 				.pipe(gulp.dest('./public/css'));
 }); 
