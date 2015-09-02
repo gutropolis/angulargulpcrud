@@ -10,3 +10,12 @@ add
 >npm install gulp-cssimport
 
 it will install gulp component in folder "node_modules"
+
+
+make a database in mysql
+import file "library (1).sql" for table there "library_db"
+
+open the class_core.php file from "lib" folder
+and setup mysqlconnection
+
+

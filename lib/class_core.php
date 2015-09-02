@@ -1,10 +1,10 @@
 <?php 
 	class Core
 	{
-		public $hostname = 'localhost';
-		public $username = 'root';
-		public $password = '';
-		public $db_name  = 'ages';
+		public $hostname = 'localhost'; //server
+		public $username = 'root';  //username
+		public $password = '';//mysql password
+		public $db_name  = 'ages'; //database name
 		public $table_name='library_db';
 		public $con = '';
 		public $query_id = '';
