@@ -12,10 +12,15 @@ add
 it will install gulp component in folder "node_modules"
 
 
+
+As we are using php,mysql insteal of MongoDb:
+
+So make  sure you have server which support mysql and php.
+
 make a database in mysql
 import file "library (1).sql" for table there "library_db"
 
 open the class_core.php file from "lib" folder
-and setup mysqlconnection
+and setup mysqlconnection and put server,databasename,table namel,username,and password.
 
 
